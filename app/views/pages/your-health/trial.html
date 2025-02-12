@@ -1,0 +1,53 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Your health" %}
+
+{% set linkedProfile = false %}
+
+{% set backLink = true %}
+{% set backLinkText = "Back" %}
+
+{% set pageHeading = "Flu vaccine" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <!-- DYNAMIC PAGE TITLE -->
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSecondary: true,
+        description: pageDescription
+      })}}
+
+      <div>
+        <p>If you have not received a recent flu vaccine, but think you are eligible to receive one, contact your GP surgery or pharmacist.
+        </p>     
+       </div>
+
+      <!-- PANEL LINK CARD -->
+     <div>
+
+{{ panelLinkCard({
+        items: [
+        {
+          title: "Book or cancel a free NHS flu vaccination at a pharmacy",
+          URL: "/pages/your-health/flu-nbs-start",
+          newWindow: false
+        },
+          {
+            title: "About the flu vaccine",
+            URL: "https://www.nhs.uk/vaccinations/flu-vaccine/",
+            newWindow: true
+          }
+        ]
+      })}}
+
+    </div> 
+
+
+    </div>
+  </div>
+
+  {% endblock %}
